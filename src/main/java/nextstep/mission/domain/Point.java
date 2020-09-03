@@ -32,10 +32,6 @@ public class Point {
         return new Point(index + RIGHT, direction.next());
     }
 
-    public Point next(Boolean right) {
-        return new Point(index + RIGHT, direction.next(right));
-    }
-
     public Point last() {
         return new Point(index + RIGHT, direction.last());
     }
