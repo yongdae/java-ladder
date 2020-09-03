@@ -5,10 +5,11 @@ import nextstep.mission.domain.Participants;
 
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.stream.IntStream;
 
 public class LadderResultStatus {
-    private HashMap<String, String> status;
+    private Map<String, String> status;
 
     private LadderResultStatus(LadderPreset ladderPreset) {
         status = new HashMap<>();
