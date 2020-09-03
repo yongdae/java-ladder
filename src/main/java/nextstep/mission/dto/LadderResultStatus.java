@@ -1,17 +1,16 @@
-package nextstep.mission.view;
+package nextstep.mission.dto;
 
 import nextstep.mission.domain.Ladder;
-import nextstep.mission.dto.LadderPreset;
 import nextstep.mission.domain.Participants;
 
 import java.util.HashMap;
 import java.util.List;
 import java.util.stream.IntStream;
 
-public class LadderMap {
+public class LadderResultStatus {
     private HashMap<String, String> status;
 
-    private LadderMap(LadderPreset ladderPreset) {
+    private LadderResultStatus(LadderPreset ladderPreset) {
         status = new HashMap<>();
 
         Participants participants = ladderPreset.getParticipants();
@@ -27,8 +26,8 @@ public class LadderMap {
                 });
     }
 
-    public static LadderMap make(LadderPreset ladderPreset) {
-        return new LadderMap(ladderPreset);
+    public static LadderResultStatus make(LadderPreset ladderPreset) {
+        return new LadderResultStatus(ladderPreset);
     }
 
     public String getResult(String target) {

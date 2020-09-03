@@ -1,5 +1,6 @@
 package nextstep.mission.view;
 
+import nextstep.mission.dto.LadderResultStatus;
 import nextstep.mission.dto.LadderPreset;
 import nextstep.mission.domain.Line;
 import nextstep.mission.domain.Participants;
@@ -17,11 +18,11 @@ public class ResultViewer {
     public static final String OUTPUT_FORMAT = "%6s";
 
     private final LadderPreset ladderPreset;
-    private final LadderMap ladderMap;
+    private final LadderResultStatus ladderResultStatus;
 
     private ResultViewer(LadderPreset ladderPreset) {
         this.ladderPreset = ladderPreset;
-        this.ladderMap = LadderMap.make(ladderPreset);
+        this.ladderResultStatus = LadderResultStatus.make(ladderPreset);
     }
 
     public static final ResultViewer make(LadderPreset ladderPreset) {
@@ -40,20 +41,20 @@ public class ResultViewer {
 
     public final void showSelectResult(String target) {
         if (target.equals("all")) {
-            System.out.println(selectAllResult(ladderPreset, ladderMap));
+            System.out.println(selectAllResult(ladderPreset, ladderResultStatus));
             return;
         }
-        System.out.println(selectResult(ladderMap, target));
+        System.out.println(selectResult(ladderResultStatus, target));
     }
 
-    private static final String selectResult(LadderMap ladderMap, String target) {
-        return ladderMap.getResult(target);
+    private static final String selectResult(LadderResultStatus ladderResultStatus, String target) {
+        return ladderResultStatus.getResult(target);
     }
 
-    private static final String selectAllResult(LadderPreset ladderPreset, LadderMap ladderMap) {
+    private static final String selectAllResult(LadderPreset ladderPreset, LadderResultStatus ladderResultStatus) {
         Participants participants = ladderPreset.getParticipants();
         return IntStream.range(0, participants.size())
-                .mapToObj(position -> participants.get(position) + " : " + selectResult(ladderMap, String.valueOf(participants.get(position))))
+                .mapToObj(position -> participants.get(position) + " : " + selectResult(ladderResultStatus, String.valueOf(participants.get(position))))
                 .collect(Collectors.joining("\n"));
 
     }
