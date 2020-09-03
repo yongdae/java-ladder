@@ -21,16 +21,8 @@ public class ParticipantsTest {
         );
 
         assertThat(participants.size()).isEqualTo(4);
-        assertThat(participants.contains("user1")).isTrue();
-        assertThat(participants.contains("user5")).isFalse();
-    }
-
-    @Test
-    void constructorThrow() {
-        assertThatThrownBy(() -> new Participant(null)).isInstanceOf(IllegalArgumentException.class);
-        assertThatThrownBy(() -> new Participant("")).isInstanceOf(IllegalArgumentException.class);
-        assertThatThrownBy(() -> new Participant(" ")).isInstanceOf(IllegalArgumentException.class);
-        assertThatThrownBy(() -> new Participant("123456")).isInstanceOf(IllegalArgumentException.class);
+        assertThat(participants.getPosition("user1")).isNotNull();
+        assertThat(participants.getPosition("user4")).isNotNull();
     }
 
     @Test

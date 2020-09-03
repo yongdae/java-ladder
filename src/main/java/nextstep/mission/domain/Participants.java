@@ -27,8 +27,4 @@ public class Participants {
                 .findFirst()
                 .orElseThrow(() -> new NotFoundException("해당 하는 Participant가 존재하지 않습니다."));
     }
-
-    public boolean contains(String name) {
-        return participants.contains(new Participant(name));
-    }
 }

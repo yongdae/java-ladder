@@ -14,10 +14,10 @@ public class InputScannerTest {
         Participants users = InputScanner.getUsers("user1,user2,user3,user4");
 
         assertThat(users.size()).isEqualTo(4);
-        assertThat(users.contains("user1")).isTrue();
-        assertThat(users.contains("user2")).isTrue();
-        assertThat(users.contains("user3")).isTrue();
-        assertThat(users.contains("user4")).isTrue();
+        assertThat(users.getPosition("user1")).isNotNull();
+        assertThat(users.getPosition("user2")).isNotNull();
+        assertThat(users.getPosition("user3")).isNotNull();
+        assertThat(users.getPosition("user4")).isNotNull();
     }
 
     @Test
