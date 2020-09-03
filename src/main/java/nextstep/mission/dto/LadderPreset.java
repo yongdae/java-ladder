@@ -1,4 +1,4 @@
-package nextstep.mission.view;
+package nextstep.mission.dto;
 
 import nextstep.mission.domain.Ladder;
 import nextstep.mission.domain.Participants;

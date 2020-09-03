@@ -1,6 +1,7 @@
 package nextstep.mission.view;
 
 import nextstep.mission.domain.Ladder;
+import nextstep.mission.dto.LadderPreset;
 import nextstep.mission.domain.Participants;
 
 import java.util.HashMap;

@@ -1,7 +1,7 @@
 package nextstep.mission;
 
 import nextstep.mission.domain.Ladder;
-import nextstep.mission.view.LadderPreset;
+import nextstep.mission.dto.LadderPreset;
 import nextstep.mission.domain.Participants;
 import nextstep.mission.view.InputScanner;
 import nextstep.mission.view.ResultViewer;

@@ -1,5 +1,6 @@
 package nextstep.mission.view;
 
+import nextstep.mission.dto.LadderPreset;
 import nextstep.mission.domain.Line;
 import nextstep.mission.domain.Participants;
 import nextstep.mission.domain.Point;
