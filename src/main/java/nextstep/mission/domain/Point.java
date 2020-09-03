@@ -2,7 +2,7 @@ package nextstep.mission.domain;
 
 public class Point {
     private static final int RIGHT = 1;
-    private static final int LEFT = 1;
+    private static final int LEFT = -1;
 
     private final int index;
     private final Direction direction;
@@ -22,7 +22,7 @@ public class Point {
         }
 
         if (direction.isLeft()) {
-            return index - LEFT;
+            return index + LEFT;
         }
 
         return this.index;
